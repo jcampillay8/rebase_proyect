@@ -20,83 +20,88 @@
 			<section class="section">
 				{% if messages %}
                 <div class="error-box">
+                    <h3>Lo sentimos:</h3><br>
                     <ul>
                     {% for message in messages %}
                         <li class="messages-error">{{ message }}</li>
                     {% endfor %}
                     </ul>
                 </div>
-                {% endif %}
-                <br><br>
+                {% else %}
                 <img src="{% static 'img/books_01.jpg' %}" alt="image">
+                {% endif %}
+                
 			</section>
 
 			<main class="contenido">
 				<div class="form-container">
                     <div class="form-btn">
-                        <span onclick="login()">Login</span>
-                        <span onclick="register()">Register</span>
+                        <span onclick="login()">Iniciar Sesión</span>
+                        <span onclick="register()">Registrarse</span>
                         <hr id="Indicator">
                     </div>                    
                     <form id="LoginForm" action='login' method='post'> 
                         {% csrf_token %}
                         <div class="form-item">
-                            <label class="label-item">Email:</label>
-                            <input class="input-item" type='email' name='loginEmail'>
+                            <div class="col1">
+                                <label class="label-item">Correo Electrónico:</label>
+                                <input class="input-item" type='email' name='loginEmail'>
+                            </div>
+                            <div class="col2">
+                                <label class="label-item">Contraseña</label>
+                                <input class="input-item" type='password' name='password'>
+                            </div>                       
+                            
                         </div>
-                        <div class="form-item">
-                            <label class="label-item">Password</label>
-                            <input class="input-item" type='password' name='password'>
-                        </div>
-                        <button type="submit" name='login' class="btn">Login</button>
-                        <a href="">Forgot password</a>
+                        <button type="submit" name='login' class="btn">Iniciar</button>
+                        <a href="">Recuperar Contraseña</a>
                     </form>
                     <form id="RegForm" action='register', method='post'>
                         {% csrf_token %}
                         <div class="form-item">
                             <div class="col1">
-                                <label class="label-item">First Name:</label>
+                                <label class="label-item">Nombre:</label>
                                 <input class="input-item" type='text' name='first_name'>
                             </div>
                             <div class="col2">
-                                <label class="label-item">Last Name:</label>
+                                <label class="label-item">Apellido :</label>
                                 <input class="input-item" type='text' name='last_name'>
                             </div>
                         </div>
 
                         <div class="form-item">
                             <div class="col1">
-                                <label class="label-item">Username:</label>
-                                <input class="input-item" type='text' name='username'>
+                                <label class="label-item">Nombre Usuario:</label>
+                                <input class="input-item" type='text' name='username' >
                             </div>
                             <div class="col2">
-                                <label class="label-item">Birthdate:</label>
-                                <input class="input-item" type='date' name='birthdate'>
+                                <label class="label-item">Fecha Nacimiento:</label>
+                                <input class="input-item" type='date' name='birthdate' style="text-align: center;">
                             </div>
                         </div>
                         <div class="form-item">
                             <div class="col1">
-                                <label class="label-item">Email Address:</label>
+                                <label class="label-item">Correo Electrónido:</label>
                                 <input class="input-item" type='email' name='email'>
                             </div>
                             <div class="col2">
-                                <label class="label-item">Confirm Email:</label>
-                                <input class="input-item" type='email' name='email'>
+                                <label class="label-item">Confirmación Correo Electrónido:</label>
+                                <input class="input-item" type='email' name='confirm_email'>
                             </div>
                             
                         </div>
                         <div class="form-item">
                             <div class="col1">
-                                <label class="label-item">Password:</label>
+                                <label class="label-item">Contraseña:</label>
                                 <input class="input-item" type='password' name='password'>
                             </div>
                             <div class="col2">
-                                <label class="label-item">Confirm Password:</label>
+                                <label class="label-item">Confirmación Contraseña:</label>
                                 <input class="input-item" type='password' name='confirm_password'>
                             </div>
                             
                         </div>
-                            <button type="submit" name="formAction" value='Login' class="btn">Register</button>
+                            <button type="submit" name="formAction" value='Login' class="btn">Registrarse</button>
                     </form>
 			</main>
 			<footer class="footer">
