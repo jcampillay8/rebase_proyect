@@ -76,11 +76,11 @@ class UserManager(models.Manager):
                 user = User.objects.get(email = user_data["loginEmail"])
             
             except:
-                errors["loginEmail"] = f"No email address matching {user_data['loginEmail']} or an account associated with this email does not exist"
+                errors["loginEmail"] = f"No existe el correo {user_data['loginEmail']} o una cuenta asociada con este correo"
                 return errors
             
             if not bcrypt.checkpw(user_data["password"].encode(), user.password.encode()):
-                errors["password"] = "Password does not match email address associated with this account. Please try again."
+                errors["password"] = "Contraseña incorrecta, por favor intentelo de nuevo"
             
             return errors
 

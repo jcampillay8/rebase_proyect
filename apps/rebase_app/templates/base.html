@@ -19,17 +19,17 @@
                 <h3>Read English Book and Study English</h3>
             </div>
             <div class="col_der">
-                <p><a href="/logout" class='btn-out'>Salir</a></p>
+                <p><a href="{% url 'users' %}" class="btn">Mi Cuenta</a> | <a href="/logout" class='btn-out'>Salir</a></p>
             </div>           
         </header>
         <nav class="navbar">
             <ul>
-                <li><a href=""><strong>Home</strong></a></li>
-                <li><a href=""><strong>Añadir Texto &rsaquo;&rsaquo;</strong></a></li>
-                <li><a href=""><strong>Leer Texto&rsaquo;&rsaquo;</strong></a></li>
-                <li><a href=""><strong>Estudiar Palabras &rsaquo;&rsaquo;</strong></a></li>
-                <li><a href=""><strong>Estudiar Frases &rsaquo;&rsaquo;</strong></a></li>
-                <li><a href=""><strong>Contacto</strong></a></li>
+                <li><a href="/rebase/home"><strong>Inicio</strong></a></li>
+                <li><a href="/rebase/add_text"><strong>Insertar Texto &rsaquo;&rsaquo;</strong></a></li>
+                <li><a href="/rebase/read"><strong>Leer Texto&rsaquo;&rsaquo;</strong></a></li>
+                <li><a href="/rebase/word"><strong>Estudiar Palabras &rsaquo;&rsaquo;</strong></a></li>
+                <li><a href="/rebase/phrase"><strong>Estudiar Frases &rsaquo;&rsaquo;</strong></a></li>
+                <li><a href="/rebase/contact"><strong>Contacto</strong></a></li>
             </ul>
         </nav>
         <main class="contenido">

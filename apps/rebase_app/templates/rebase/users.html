@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Rebase|Home {% endblock %}
+
+{% block content %} 
+
+<table>
+    <tr>
+        <th>User ID</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Birthdate</th>
+        <th>Created At</th>
+        
+    </tr>
+    
+    <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.first_name}} {{ user.last_name}}</td>
+        <td>{{ user.email}}</td>
+        <td>{{ user.birthdate}}</td>
+        <td>{{ user.created_at}}</td>
+    
+    </tr>
+    
+</table>
+{% endblock %}
