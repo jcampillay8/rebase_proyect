@@ -7,22 +7,45 @@
 
 <table>
     <tr>
-        <th>User ID</th>
-        <th>Full Name</th>
-        <th>Email</th>
-        <th>Birthdate</th>
-        <th>Created At</th>
-        
+        <th>Usuario ID</th>
+        <th>Nombre Completo</th>
+        <th>Correo Electrónico</th>
+        <th>Fecha Nacimiento</th>
+        <th>Creado en</th>
     </tr>
-    
+    {% load i18n %}
     <tr>
         <td>{{ user.id }}</td>
         <td>{{ user.first_name}} {{ user.last_name}}</td>
         <td>{{ user.email}}</td>
         <td>{{ user.birthdate}}</td>
+        {% language 'es' %}
         <td>{{ user.created_at}}</td>
-    
+        {% endlanguage %}
     </tr>
-    
+</table>
+<br><br>
+<table>
+    <tr>
+        <th>Texto ID</th>
+        <th>Nombre Texto</th>
+        <th>Creado en</th>
+        <th>Acción</th>
+    </tr>
+    {% for text in textos %}
+    {% if text.user.id == request.session.id %}
+    {% load i18n %}
+    <tr>
+        <td>{{ text.id }}</td>
+        <td>{{ text.text_name}}</td>
+        {% language 'es' %}
+        <td>{{ text.createdAt}}</td>
+        {% endlanguage %}
+        <td>
+            <a href="delete/{{text.id}}"  class="button-1">Eliminar</a>
+        </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
 </table>
 {% endblock %}

@@ -215,3 +215,19 @@ form a{
         background-color: #045c84;
         color: white;
     }
+
+.row_text{
+    display: flex;
+    flex-direction: column;
+}
+
+.row3 ul,
+.row3 li{
+    display: flex;
+    justify-content: center;
+}
+
+.row3 a{
+    margin-left: 20px;
+    margin-right: 20px;
+}

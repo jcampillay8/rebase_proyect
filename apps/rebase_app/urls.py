@@ -12,4 +12,5 @@ urlpatterns = [
     path('rebase/contact', views.contact, name='contact'),
     path('rebase/success2', views.success2, name='success2'),
     path('rebase/users', views.users, name="users"),
+    path('rebase/delete/<int:textId>', views.delete, name='delete'),
 ]
